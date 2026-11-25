@@ -2,7 +2,10 @@ package com.orderflow.payment.strategy;
 
 import com.orderflow.payment.PaymentMethod;
 import com.orderflow.payment.PaymentService;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class NetBankingPayment implements PaymentService {
     @Override
     public void pay(double amount){

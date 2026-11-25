@@ -1,11 +1,22 @@
 package com.orderflow.payment;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+
+@Component
 public class PaymentRegistry {
 
+    public PaymentRegistry(List<PaymentService> paymentServices) {
+        System.out.println(paymentServices.size());
+        for (PaymentService paymentService: paymentServices ){
+            register(paymentService);
+        }
+    }
 
     private final Map<PaymentMethod, PaymentService> payments =  new HashMap<>();
     public  void register(PaymentService paymentService){

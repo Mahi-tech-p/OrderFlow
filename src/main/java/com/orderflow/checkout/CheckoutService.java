@@ -3,9 +3,11 @@ package com.orderflow.checkout;
 import com.orderflow.payment.PaymentMethod;
 import com.orderflow.payment.PaymentRegistry;
 import com.orderflow.payment.PaymentService;
+import org.springframework.stereotype.Service;
 
 import java.util.Objects;
 
+@Service
 public class CheckoutService {
 
     private final PaymentRegistry paymentRegistry;
